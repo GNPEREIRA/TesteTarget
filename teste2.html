@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2</title>
+</head>
+<body>
+
+    <input type="number" id="entrada" autofocus="true">
+    <button id="botao" onclick="verificaNumero()">Verificar</button>
+
+    <script>
+        
+        
+        function verificaNumero(){
+            
+            //declaração das variáveis
+            var valorRecebido = document.getElementById('entrada').value
+
+            //Verifica se foi digitado um valor válido
+            if(valorRecebido == '' || Number.isNaN(valorRecebido)){
+                alert('Digite um número inteiro')   
+                return
+            }
+
+            //Condição matemática para verificar se número pertence à sequência
+            var resultado1 = Math.sqrt(5 * Math.pow(valorRecebido, 2) + 4)
+            var resultado2 = Math.sqrt(5 * Math.pow(valorRecebido,2) - 4)
+
+            if(Number.isInteger(resultado1) || Number.isInteger(resultado2)){
+                alert('O número ' + valorRecebido + ' pertence à sequência Fibonacci!')
+                valorRecebido = null    
+            }else{
+                alert('O número ' + valorRecebido + ' não pertence à sequência Fibonacci!')   
+            }
+
+            //recarrega a página
+            location.reload()
+
+            //limpa o campo
+            valorRecebido = document.getElementById('entrada').value = ''   
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 5</title>
+</head>
+<body>
+    
+    <input type="text" id="entrada">
+    <button onclick="inverteTexto()">Inverter texto</button>
+
+    <p id="texto"></p>
+
+    <script>
+        
+        function inverteTexto(){
+            //Caputura a string
+            var valor = document.getElementById('entrada').value
+    
+            //Separa as letras da string num array
+            var caracteres = valor.split('')
+
+            //Variável que guarda a string invertida
+            var strInvertida = ''
+            
+
+            console.log(caracteres.length)
+
+            //itera sobre a string retirando uma posição visto que o array inicia do 0
+            //Guarda o caracter a cada iteração
+            for(var i = caracteres.length - 1; i >= 0; i-- ){
+                strInvertida += caracteres[i]
+            }
+                
+            //imprime a String invertida
+            document.getElementById('texto').innerHTML = strInvertida
+
+        }
+        
+    </script>
+</body>
+</html>
